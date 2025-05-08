@@ -17,52 +17,52 @@
 
 <body>
 
- <!--Inicio-->
-<section id="inicio">
-  <div class="contenido">
-    <header>
-      <div class="contenido-header">
-        <div id="icono-nav" onclick="menuResponsive()">
-          <i class="fa-solid fa-bars"></i> <!-- Ícono del menú -->
-        </div>
+  <!--Inicio-->
+  <section id="inicio">
+    <div class="contenido">
+      <header>
+        <div class="contenido-header">
+          <div id="icono-nav" onclick="menuResponsive()">
+            <i class="fa-solid fa-bars"></i> <!-- Ícono del menú -->
+          </div>
 
-        <script>
-  function menuResponsive() {
-    const nav = document.getElementById('nav');
-    nav.classList.toggle('responsive'); // Mostrar u ocultar el menú
-  }
+          <script>
+            function menuResponsive() {
+              const nav = document.getElementById('nav');
+              nav.classList.toggle('responsive'); // Mostrar u ocultar el menú
+            }
 
-  // Cierra el menú al hacer clic en un enlace
-  document.querySelectorAll('#links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const nav = document.getElementById('nav');
-      nav.classList.remove('responsive');
-    });
-  });
+            // Cierra el menú al hacer clic en un enlace
+            document.querySelectorAll('#links a').forEach(link => {
+              link.addEventListener('click', (e) => {
+                const nav = document.getElementById('nav');
+                nav.classList.remove('responsive');
+              });
+            });
 
-  // Cierra el menú al hacer clic fuera del menú
-  document.addEventListener('click', (e) => {
-    const nav = document.getElementById('nav');
-    const iconoNav = document.getElementById('icono-nav');
+            // Cierra el menú al hacer clic fuera del menú
+            document.addEventListener('click', (e) => {
+              const nav = document.getElementById('nav');
+              const iconoNav = document.getElementById('icono-nav');
 
-    if (!nav.contains(e.target) && !iconoNav.contains(e.target)) {
-      nav.classList.remove('responsive');
-    }
-  });
-</script>
+              if (!nav.contains(e.target) && !iconoNav.contains(e.target)) {
+                nav.classList.remove('responsive');
+              }
+            });
+          </script>
 
-        <nav id="nav">
-          <ul id="links">
-            <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#sobremi">SOBRE MI</a></li>
-            <li><a href="#servicios">SERVICIOS</a></li>
-            <li><a href="#skills">HABILIDADES</a></li>
-            <li><a href="#portafolio">PORTAFOLIO</a></li>
-            <li><a href="#testimonios">TESTIMONIOS</a></li>
-            <li><a href="#blog">BLOG</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-          </ul>
-        </nav>
+          <nav id="nav">
+            <ul id="links">
+              <li><a href="#inicio">INICIO</a></li>
+              <li><a href="#sobremi">SOBRE MI</a></li>
+              <li><a href="#servicios">SERVICIOS</a></li>
+              <li><a href="#skills">HABILIDADES</a></li>
+              <li><a href="#portafolio">PORTAFOLIO</a></li>
+              <li><a href="#testimonios">TESTIMONIOS</a></li>
+              <li><a href="#blog">BLOG</a></li>
+              <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+          </nav>
 
 
           <div class="redes">
@@ -151,7 +151,7 @@
         que impulsen el crecimiento de cada empresa.
 
       </p>
-      <a href="CV_EDUARDO.pdf" download="CV_EDUARDO.pdf">Descargar CV</a>
+      <a href="CV EDUARDO LOPEZ.pdf" download="CV EDUARDO LOPEZ.pdf">Descargar CV</a>
     </div>
   </section>
 
