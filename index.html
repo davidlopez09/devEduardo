@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" />
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <link rel="icon" href="programacion.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="index.css">
+  <title>Desarrollador web</title>
+</head>
+
+<body>
+
+ <!--Inicio-->
+<section id="inicio">
+  <div class="contenido">
+    <header>
+      <div class="contenido-header">
+        <div id="icono-nav" onclick="menuResponsive()">
+          <i class="fa-solid fa-bars"></i> <!-- Ícono del menú -->
+        </div>
+
+        <script>
+  function menuResponsive() {
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('responsive'); // Mostrar u ocultar el menú
+  }
+
+  // Cierra el menú al hacer clic en un enlace
+  document.querySelectorAll('#links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav');
+      nav.classList.remove('responsive');
+    });
+  });
+
+  // Cierra el menú al hacer clic fuera del menú
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('nav');
+    const iconoNav = document.getElementById('icono-nav');
+
+    if (!nav.contains(e.target) && !iconoNav.contains(e.target)) {
+      nav.classList.remove('responsive');
+    }
+  });
+</script>
+
+        <nav id="nav">
+          <ul id="links">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#sobremi">SOBRE MI</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#skills">HABILIDADES</a></li>
+            <li><a href="#portafolio">PORTAFOLIO</a></li>
+            <li><a href="#testimonios">TESTIMONIOS</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+          </ul>
+        </nav>
+
+
+          <div class="redes">
+            <a class="red" href="tel:+573233847323"><i class="fa fa-phone"></i></a>
+            <a href="https://wa.me/573233847323" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/david_lopez0929/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/davidlopez09"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+      </header>
+
+      <div class="presentacion">
+        <div class="contenedor-foto">
+          <img src="yo33.jpeg" alt="Foto de Eduardo Lopez">
+        </div>
+        <br>
+        <div class="texto">
+          <p class="bienvenida">Bienvenidos</p>
+          <h2 id="yo"><span id="soy">Soy </span>Eduardo López,<br><span id="role" class="typed-text">Desarrollador
+              web</span></h2>
+          <div class="lenguajes">
+            <i class="fab fa-html5" style="font-size: 2rem; color: #e34c26;" title="HTML"
+              onmouseover="showTooltip(this, 'HTML')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-css3-alt" style="font-size: 2rem; color: #1572b6;" title="CSS"
+              onmouseover="showTooltip(this, 'CSS')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-js" style="font-size: 2rem; color: #f7df1e;" title="JavaScript"
+              onmouseover="showTooltip(this, 'JavaScript')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-php" style="font-size: 2rem; color: #777bb4;" title="PHP"
+              onmouseover="showTooltip(this, 'PHP')" onmouseout="hideTooltip()"></i>
+            <i class="fas fa-database" style="font-size: 2rem; color: #f29111;" title="MySQL"
+              onmouseover="showTooltip(this, 'MySQL')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-react" style="font-size: 2rem; color: #61dafb;" title="React"
+              onmouseover="showTooltip(this, 'React')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-microsoft" style="font-size: 2rem; color: #5e5e5e;" title=".NET"
+              onmouseover="showTooltip(this, '.NET')" onmouseout="hideTooltip()"></i>
+            <i class="fas fa-mobile-alt" style="font-size: 2rem; color: #4caf50;" title="Cordova"
+              onmouseover="showTooltip(this, 'Cordova')" onmouseout="hideTooltip()"></i>
+            <i class="fab fa-bootstrap" style="font-size: 2rem; color: #7952b3;" title="Bootstrap"
+              onmouseover="showTooltip(this, 'Bootstrap')" onmouseout="hideTooltip()"></i>
+          </div>
+          <div id="tooltip"
+            style="position: absolute; background: #333; color: #fff; padding: 5px; border-radius: 5px; display: none;">
+          </div>
+
+          <script>
+
+            function showTooltip(element, text) {
+              const tooltip = document.getElementById('tooltip');
+              tooltip.textContent = text;
+              tooltip.style.display = 'block';
+              tooltip.style.left = element.getBoundingClientRect().left + 'px';
+              tooltip.style.top = element.getBoundingClientRect().top - 30 + 'px';
+            }
+
+            function hideTooltip() {
+              const tooltip = document.getElementById('tooltip');
+              tooltip.style.display = 'none';
+            }
+          </script>
+          <br>
+          <p style="color:white;" class="descripcion">Desarrollador web apasionado por transformar ideas en experiencias
+            digitales que sorprenden y conectan. Combino creatividad y destreza técnica para ayudar a las empresas a
+            destacar y crecer online.</p>
+          <br>
+          <a class="boton" href="#portafolio">Ir a portafolio</a>
+        </div>
+      </div>
+      <br>
+  </section>
+
+  <!--sibre mi-->
+  <section id="sobremi">
+    <br>
+    <div class="contenedor-foto" data-aos="fade-right">
+      <img src="yo33.jpeg" alt="Foto de Eduardo Lopez">
+    </div>
+    <br>
+    <div style="font-weight:bold;" class="sobremi" data-aos="fade-left">
+      <p class="titulo-seccion">Sobre mi</p>
+      <h2>Hola, <span>Soy Eduardo López</span> </h2>
+      <h3 style="font-weight:bold;">Desarrollador Web</h3>
+      <p>Me apasiona enfrentar desafíos, encontrar soluciones creativas
+        y lograr que cada proyecto supere las expectativas. Con experiencia
+        en frontend y backend, me enfoco en ofrecer resultados innovadores
+        que impulsen el crecimiento de cada empresa.
+
+      </p>
+      <a href="CV_EDUARDO.pdf" download="CV_EDUARDO.pdf">Descargar CV</a>
+    </div>
+  </section>
+
+  <!--Servicios-->
+  <section id="servicios">
+    <h3 class="titulo-seccion">Mis Servicios</h3>
+    <div class="fila">
+      <div class="servicios" data-aos="fade-right" data-aos-delay="100" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fab fa-html5" style="font-size: 2rem; color: #e34c26;" title="HTML"></i>
+          <i class="fab fa-css3-alt" style="font-size: 2rem; color: #1572b6;" title="CSS"></i>
+          <i class="fab fa-js" style="font-size: 2rem; color: #f7df1e;" title="JavaScript"></i>
+        </div>
+        <h4>Desarrollo Web</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>Front-end</li>
+          <li>Back-end</li>
+        </ul>
+        <p class="descripcion">Desarrollo sitios web modernos y funcionales, utilizando tecnologías como HTML, CSS,
+          JavaScript y frameworks avanzados para garantizar una experiencia de usuario excepcional.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Desarrollo%20Web"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+      <div class="servicios" data-aos="fade-right" data-aos-delay="200" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fas fa-shopping-cart" style="font-size: 2rem; color: #4caf50;" title="Tienda Online"></i>
+          <i class="fab fa-php" style="font-size: 2rem; color: #777bb4;" title="PHP"></i>
+          <i class="fas fa-database" style="font-size: 2rem; color: #f29111;" title="MySQL"></i>
+        </div>
+        <h4>Tiendas Online</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>E-commerce</li>
+          <li>Integración de pagos</li>
+        </ul>
+        <p class="descripcion">Creo tiendas en línea personalizadas con sistemas de carrito de compras, pasarelas de
+          pago seguras y diseño atractivo para impulsar tus ventas.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Tiendas%20Online"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+      <div class="servicios" data-aos="fade-right" data-aos-delay="300" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fab fa-android" style="font-size: 2rem; color: #3ddc84;" title="Android"></i>
+          <i class="fab fa-apple" style="font-size: 2rem; color: #000;" title="iOS"></i>
+          <i class="fas fa-mobile-alt" style="font-size: 2rem; color: #4caf50;" title="Cordova"></i>
+        </div>
+        <h4>Aplicaciones Móviles</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>Android</li>
+          <li>iOS</li>
+        </ul>
+        <p class="descripcion">Desarrollo aplicaciones móviles nativas y multiplataforma que ofrecen un rendimiento
+          óptimo y una experiencia de usuario fluida.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Aplicaciones%20Móviles"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+    </div>
+    <div class="fila">
+      <div class="servicios" data-aos="fade-right" data-aos-delay="400" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fas fa-sync-alt" style="font-size: 2rem; color: #007bff;" title="Actualizaciones"></i>
+          <i class="fas fa-tools" style="font-size: 2rem; color: #6c757d;" title="Mantenimiento"></i>
+        </div>
+        <h4>Actualizaciones y Mantenimiento</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>Optimización</li>
+          <li>Soporte técnico</li>
+        </ul>
+        <p class="descripcion">Mantengo tus sistemas actualizados y en óptimas condiciones, asegurando su correcto
+          funcionamiento y seguridad.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Actualizaciones%20y%20Mantenimiento"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+      <div class="servicios" data-aos="fade-right" data-aos-delay="500" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fas fa-wrench" style="font-size: 2rem; color: #ff5722;" title="Reparaciones"></i>
+          <i class="fas fa-bug" style="font-size: 2rem; color: #dc3545;" title="Depuración"></i>
+        </div>
+        <h4>Reparaciones</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>Corrección de errores</li>
+        </ul>
+        <p class="descripcion">Ofrezco servicios de reparación de software, solucionando problemas técnicos y
+          recuperando datos importantes.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Reparaciones"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+      <div class="servicios" data-aos="fade-right" data-aos-delay="600" data-aos-offset="200">
+        <div class="lenguajes">
+          <i class="fas fa-cogs" style="font-size: 2rem; color: #17a2b8;" title="Software a la medida"></i>
+          <i class="fas fa-code" style="font-size: 2rem; color: #6f42c1;" title="Código"></i>
+        </div>
+        <h4>Software a la Medida</h4>
+        <hr>
+        <ul class="servicios-tag">
+          <li>Soluciones personalizadas</li>
+          <li>Automatización</li>
+        </ul>
+        <p class="descripcion">Desarrollo software adaptado a las necesidades específicas de tu negocio, optimizando
+          procesos y mejorando la productividad.</p>
+        <a class="saber-mas"
+          href="https://wa.me/573103716894?text=Hola%20necesito%20más%20información%20sobre%20el%20servicio%20Software%20a%20la%20Medida"
+          target="_blank">Saber más &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!--skills-->
+  <div class="contenedor-skills" id="skills">
+    <br><br>
+    <h3>HABILIDADES</h3>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-html5" style="color: #e34c26;"></i> Html</p>
+        <span class="porcentaje">95%</span>
+      </div>
+      <div class="barra">
+        <div id="html" class="barra-progreso1"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-css3-alt" style="color: #1572b6;"></i> CSS</p>
+        <span class="porcentaje">95%</span>
+      </div>
+      <div class="barra">
+        <div id="css" class="barra-progreso8"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-js" style="color: #f7df1e;"></i> Javascript</p>
+        <span class="porcentaje">95%</span>
+      </div>
+      <div class="barra">
+        <div id="js" class="barra-progreso2"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fas fa-database" style="color: #f29111;"></i> Base de Datos (MySQL)</p>
+        <span class="porcentaje">95%</span>
+      </div>
+      <div class="barra">
+        <div id="mysql" class="barra-progreso3"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-php" style="color: #777bb4;"></i> PHP</p>
+        <span class="porcentaje">95%</span>
+      </div>
+      <div class="barra">
+        <div id="php" class="barra-progreso4"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-react" style="color: #61dafb;"></i> ReactJS</p>
+        <span class="porcentaje">90%</span>
+      </div>
+      <div class="barra">
+        <div id="react" class="barra-progreso5"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fab fa-bootstrap" style="color: #7952b3;"></i> Bootstrap</p>
+        <span class="porcentaje">90%</span>
+      </div>
+      <div class="barra">
+        <div id="bootstrap" class="barra-progreso6"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><i class="fas fa-mobile-alt" style="color: #4caf50;"></i> Cordova</p>
+        <span class="porcentaje">90%</span>
+      </div>
+      <div class="barra">
+        <div id="cordova" class="barra-progreso7"></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <section id="portafolio">
+    <br><br><br><br>
+    <h3 class="titulo-seccion">Mis Proyectos</h3>
+    <div class="fila">
+      <div class="proyecto">
+        <h3>Empanadictos</h3>
+        <img src="empanadictos.png" alt="Empanadictos">
+        <div class="info">
+          <h4>Tienda online completa para Empanadictos, la marca que combina sabor y estilo</h4>
+          <button
+            onclick="abrirModal('empanadictos.png', 'Tienda online completa para Empanadictos, la marca que combina sabor y estilo. Este proyecto está diseñado para Empanadictos, una marca innovadora que ofrece ramos de empanadas, moda y ropa temática inspirada en su producto estrella.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>AGROSEN</h3>
+        <img src="Agrosen.png" alt="AGROSEN">
+        <div class="info">
+          <h4>AGROSEN es una plataforma en línea para la venta de animales de granja, actualmente del SENA C.A.B.P.</h4>
+          <button
+            onclick="abrirModal('Agrosen.png', 'AGROSEN es una plataforma online diseñada para facilitar la compra y venta de animales de granja, desarrollada en el SENA C.A.B.P. Permite gestionar publicaciones, clientes y transacciones de forma ágil y segura.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>INTEGRA</h3>
+        <img src="INTEGRA.png" alt="AGROSEN">
+        <div class="info">
+          <h4>Software logístico y de transporte para una gestión eficiente y centralizada.</h4>
+          <button
+            onclick="abrirModal('INTEGRA.png', 'Integra es una solución integral para gestionar operaciones logísticas, desde el ingreso hasta la entrega. Incluye dos apps móviles: una para control de acceso de contenedores, personal y visitas; y otra para capturar evidencias con fotos y formularios. Ofrece base de datos robusta, panel en tiempo real y diseño responsivo, garantizando control, trazabilidad y eficiencia.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>Software Avícola</h3>
+        <img src="avicola.png" alt="Software Avícola">
+        <div class="info">
+          <h4>Software Avícola de Trazabilidad, ventas y Gestión de Lotes</h4>
+          <button
+            onclick="abrirModal('avicola.png', 'Sistema diseñado para optimizar la trazabilidad en la producción avícola, registrando lotes, insumos, control de edad y mortalidad. Permite gestionar ventas por unidad con precios sugeridos y genera informes detallados de inversiones, ventas y utilidades, garantizando control y trazabilidad completa.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+
+      <div class="proyecto">
+        <h3>Empanadelicias</h3>
+        <img src="empanadelicias.png" alt="Empanadelicias">
+        <div class="info">
+          <h4>Empanadelicias, venta de empanadas por unidad o cantidad, pedidos online.</h4>
+          <button
+            onclick="abrirModal('empanadelicias.png', 'Empanadelicias es una tienda online especializada en la venta de empanadas por unidad o al por mayor, con sistema de pedidos y pagos en línea de forma rápida y sencilla.')">Ver
+            más</button>
+
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>DistriMerca</h3>
+        <img src="negocio.png" alt="DistriMerca">
+        <div class="info">
+          <h4>Base de datos para DistriMerca, gestionando pagos y registro de créditos y pagos pendientes.</h4>
+          <button
+            onclick="abrirModal('negocio.png', 'Sistema de base de datos para DistriMerca, que facilita la gestión de pagos, control de créditos y seguimiento de saldos pendientes de manera organizada y eficiente.')">Ver
+            más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILA OCULTA -->
+    <div class="fila fila-extra" style="display: none;">
+      <div class="proyecto">
+        <h3>"The Migrant Kitchen</h3>
+        <img src="desa.png" alt="The Migrant Kitchen">
+        <div class="info">
+          <h4>La Cocina del Migrante (The Migrant Chicken): tienda online de comidas saludables y pedidos en línea.</h4>
+          <button
+            onclick="abrirModal('desa.png', 'Esta plataforma está diseñada para ofrecer comidas tradicionales, saludables, jugos naturales, batidos y helados artesanales a través de pedidos online rápidos y seguros. Cuenta con un sistema de carrito de compras, pasarelas de pago integradas y un diseño responsivo que garantiza una experiencia de usuario fluida desde cualquier dispositivo.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>Tuing App</h3>
+        <img src="ferro.png" alt="Tuing App">
+        <div class="info">
+          <h4>Tuing App: software de caja para farmacias con facturación electrónica y gestión avanzada de ventas.</h4>
+          <button
+            onclick="abrirModal('ferro.png', 'Tuing App es un sistema de punto de venta para farmacias que gestiona ventas, roles de usuario y base de datos segura. Ofrece informes con gráficas dinámicas, facturación electrónica con la DIAN y un diseño intuitivo y responsivo para una operación rápida y segura.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <h3>Delicious Hamburgers</h3>
+        <img src="food.png" alt="Delicious Hamburgers">
+        <div class="info">
+          <h4>Delicious Hamburgers
+            Tienda online para las mejores hamburguesas, con sistema de pedidos y pagos Online.
+          </h4>
+          <button
+            onclick="abrirModal('food.png', ' Tienda online de hamburguesas en Córdoba con pedidos y seguimiento en tiempo real, pagos seguros, personalización de pedidos, base de datos robusta y panel administrativo para gestión de productos, inventario y ventas.')">Ver
+            Proyecto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón Ver Más -->
+    <div style="text-align: center; margin-top: 20px;">
+      <button class="ver-mas-proyectos" onclick="mostrarMasProyectos()">Ver más proyectos</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="miModal" class="modal" onclick="cerrarModal(event)">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal(event)">&times;</span>
+        <img id="modalImg" src="" alt="">
+        <p id="modalInfo"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- section testimonios-->
+  <section id="testimonios">
+    <div class="container">
+      <h2 class="section-title">Testimonios</h2>
+      <p class="section-subtitle">Lo que dicen algunos de mis clientes sobre mi trabajo</p>
+
+      <div class="testimonios-slider">
+        <div class="testimonios-track">
+          <!-- Testimonio 1 -->
+          <div class="testimonio-item">
+            <div class="testimonio-contenido">
+              <div class="testimonio-texto">
+                <i class="fas fa-quote-left"></i>
+                <p>Su capacidad para entender nuestras necesidades y convertirlas en un sitio web funcional y atractivo
+                  superó nuestras expectativas. El proyecto fue entregado antes del plazo y con una calidad excepcional.
+                </p>
+              </div>
+              <div class="testimonio-info">
+                <div class="testimonio-img">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 1">
+                </div>
+                <div class="testimonio-autor">
+                  <h4>José Otero</h4>
+                  <p>CEO, Empanadictos</p>
+                  <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 2 -->
+          <div class="testimonio-item">
+            <div class="testimonio-contenido">
+              <div class="testimonio-texto">
+                <i class="fas fa-quote-left"></i>
+                <p>La plataforma que desarrolló para nosotros revolucionó la forma en que manejamos nuestro negocio. La
+                  interfaz es intuitiva y el sistema de base de datos es exactamente lo que necesitábamos para gestionar
+                  nuestros inventarios.</p>
+              </div>
+              <div class="testimonio-info">
+                <div class="testimonio-img">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente 2">
+                </div>
+                <div class="testimonio-autor">
+                  <h4>Laura Mendoza</h4>
+                  <p>Gerente, DistriMerca</p>
+                  <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 3 -->
+          <div class="testimonio-item">
+            <div class="testimonio-contenido">
+              <div class="testimonio-texto">
+                <i class="fas fa-quote-left"></i>
+                <p>Transformó nuestra idea en una plataforma e-commerce completa. El sistema de pedidos online aumentó
+                  nuestras ventas en un 45% en el primer trimestre. La atención al detalle y soporte técnico son
+                  excepcionales.</p>
+              </div>
+              <div class="testimonio-info">
+                <div class="testimonio-img">
+                  <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Cliente 3">
+                </div>
+                <div class="testimonio-autor">
+                  <h4>Miguel Ángel Pérez</h4>
+                  <p>Propietario, Empanadelicias</p>
+                  <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 4 -->
+          <div class="testimonio-item">
+            <div class="testimonio-contenido">
+              <div class="testimonio-texto">
+                <i class="fas fa-quote-left"></i>
+                <p>El desarrollo de AGROSEN ha facilitado enormemente la comercialización de nuestros productos
+                  agrícolas. La plataforma es robusta, segura y el diseño es moderno y profesional. Muy satisfechos con
+                  el resultado.</p>
+              </div>
+              <div class="testimonio-info">
+                <div class="testimonio-img">
+                  <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Cliente 4">
+                </div>
+                <div class="testimonio-autor">
+                  <h4>Ana María Gutiérrez</h4>
+                  <p>Coordinadora, SENA C.A.B.P.</p>
+                  <div class="testimonio-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="testimonios-controles">
+          <button class="testimonios-btn prev-btn" aria-label="Testimonio anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="testimonios-indicadores">
+            <span class="indicador active" data-index="0"></span>
+            <span class="indicador" data-index="1"></span>
+            <span class="indicador" data-index="2"></span>
+            <span class="indicador" data-index="3"></span>
+          </div>
+          <button class="testimonios-btn next-btn" aria-label="Testimonio siguiente">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <h2 class="section-title">Mi Blog</h2>
+      <p class="section-subtitle">Comparto conocimientos, tendencias y noticias sobre desarrollo web y tecnología</p>
+
+      <div class="blog-grid">
+        <!-- Artículo 1 -->
+        <article class="blog-card" data-category="desarrollo">
+          <div class="blog-img-container">
+            <span class="blog-category">Desarrollo Web</span>
+            <img src="https://picsum.photos/seed/blog1/600/400" alt="React vs Angular: ¿Cuál elegir en 2025?">
+            <div class="blog-date">
+              <span class="day">12</span>
+              <span class="month">Abr</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">React vs Angular: ¿Cuál elegir en 2025?</h3>
+            <p class="blog-excerpt">Una comparativa detallada entre los frameworks más populares para desarrollo
+              frontend y cuál podría ser mejor para tu próximo proyecto.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Autor">
+                <span>Por Alejandro Gómez</span>
+              </div>
+              <div class="blog-stats">
+                <span><i class="fas fa-eye"></i> 1.2k</span>
+                <span><i class="fas fa-comment"></i> 32</span>
+              </div>
+            </div>
+            <a href="https://pagepro.co/blog/react-vs-angular-comparison/" class="blog-read-more" target="_blank">Leer
+              más <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article class="blog-card" data-category="diseño">
+          <div class="blog-img-container">
+            <span class="blog-category">Diseño UI/UX</span>
+            <img src="https://picsum.photos/seed/blog2/600/400" alt="Tendencias de diseño web para 2025">
+            <div class="blog-date">
+              <span class="day">05</span>
+              <span class="month">May</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Tendencias de diseño web para 2025</h3>
+            <p class="blog-excerpt">Descubre las últimas tendencias en diseño de interfaces que están revolucionando la
+              experiencia de usuario y cómo implementarlas.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <img src="https://randomuser.me/api/portraits/women/53.jpg" alt="Autor">
+                <span>Por Carla Martínez</span>
+              </div>
+              <div class="blog-stats">
+                <span><i class="fas fa-eye"></i> 958</span>
+                <span><i class="fas fa-comment"></i> 24</span>
+              </div>
+            </div>
+            <a href="https://www.latevaweb.com/diseno-web-2025" target="_blank" class="blog-read-more">Leer más <i
+                class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Artículo 3 -->
+        <article class="blog-card" data-category="tecnologia">
+          <div class="blog-img-container">
+            <span class="blog-category">Tecnología</span>
+            <img src="https://picsum.photos/seed/blog3/600/400" alt="Inteligencia Artificial en el desarrollo web">
+            <div class="blog-date">
+              <span class="day">27</span>
+              <span class="month">Abr</span>
+            </div>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Inteligencia Artificial en el desarrollo web</h3>
+            <p class="blog-excerpt">Cómo la IA está transformando la forma en que construimos sitios web y aplicaciones,
+              mejorando la eficiencia y la personalización.</p>
+            <div class="blog-meta">
+              <div class="blog-author">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Autor">
+                <span>Por Miguel Rojas</span>
+              </div>
+              <div class="blog-stats">
+                <span><i class="fas fa-eye"></i> 1.5k</span>
+                <span><i class="fas fa-comment"></i> 47</span>
+              </div>
+            </div>
+            <a href="https://evotic.es/desarrollo-web/inteligencia-artificial-y-desarrollo-web/" target="_blank"
+              class="blog-read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section id="contacto">
+    <h3 class="titulo-seccion">CONTACTANOS AHORA</h3>
+    <br>
+    <div class="contenedor-form">
+      <form id="formulario-contacto">
+        <div class="mitad">
+          <input type="text" name="nombre" placeholder="Nombre Completo" class="input-mitad" required>
+          <input type="email" name="email" placeholder="Dirección de Email" class="input-mitad" required>
+        </div>
+        <br>
+        <div class="fila">
+          <input type="text" name="tema" placeholder="Tema..." class="input-full" required>
+        </div>
+        <div class="fila">
+          <textarea name="mensaje" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"
+            required></textarea>
+        </div>
+        <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+      </form>
+      <!-- MENSAJE DE ÉXITO O ERROR -->
+      <div id="mensaje-estado" style="display:none; margin-top: 15px; text-align: center; font-weight: bold;"></div>
+    </div>
+  </section>
+
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("bLUv2HlzUImiOEYO1"); // Public Key
+    })();
+
+    const form = document.getElementById("formulario-contacto");
+    const mensajeEstado = document.getElementById("mensaje-estado");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Evitar recarga
+
+      emailjs.sendForm('service_124pgga', 'template_26erdni', this)
+        .then(function () {
+          mensajeEstado.style.display = 'block';
+          mensajeEstado.style.color = 'green';
+          mensajeEstado.textContent = '✅ ¡Mensaje enviado exitosamente!';
+          form.reset();
+          setTimeout(() => mensajeEstado.style.display = 'none', 5000); // Ocultar tras 5s
+        }, function (error) {
+          mensajeEstado.style.display = 'block';
+          mensajeEstado.style.color = 'red';
+          mensajeEstado.textContent = '❌ Ocurrió un error al enviar. Intenta de nuevo.';
+          setTimeout(() => mensajeEstado.style.display = 'none', 5000);
+        });
+    });
+  </script>
+
+
+  <footer>
+    <h2 class="contactame"> CONTÁCTAME EN MIS REDES</h2>
+    <div class="contacto">
+      <a style="text-decoration: none;" class="red" href="tel:+573233847323"><i class="fa fa-phone"></i></a>
+      <a style="text-decoration: none;" class="red" href="https://wa.me/573103716894" target="_blank"><i
+          class="fa-brands fa-whatsapp"></i></a>
+      <a style="text-decoration: none;" class="red" href="https://www.instagram.com/david_lopez0929/"><i
+          class="fa-brands fa-instagram"></i></a>
+      <a style="text-decoration: none;" class="red" href="https://github.com/davidlopez09"><i
+          class="fa-brands fa-github"></i></a>
+    </div>
+    <br>
+    <p>Eduardo López Desarrollador Web 2024</p>
+
+  </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
